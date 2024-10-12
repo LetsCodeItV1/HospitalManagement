@@ -21,12 +21,15 @@ Assurez-vous d'avoir les éléments suivants installés :
    cd HospitalManagement
    ```
 
-3. Activer l'environnement virtuel
+3.1 Activer l'environnement virtuel
    ```bash
    cd HospitalManagement/Scripts
    activate
    cd ../
    ```
+3.2 installer Django
+```bash
+   pip install django
 
 4. Exécuter le serveur de développement Django
    ```bash
