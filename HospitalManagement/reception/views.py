@@ -14,6 +14,3 @@ def patient(request):
 def employe(request):
     return render(request, 'employe.html')
 
-
-def test(request):
-    return render(request, 'employe.html')
