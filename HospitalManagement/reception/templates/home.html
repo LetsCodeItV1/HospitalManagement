@@ -62,92 +62,79 @@
                             {#                            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>#}
                             <a href="#" class="btn btn-success btn-round">Nouveau patient</a>
                             <a href="#" class="btn btn-primary btn-round">Planifiez rendez-vous</a>
-                            <a href="#" class="btn btn-primary btn-round">Add Customer</a>
-
+                            <a href="#" class="btn btn-secondary btn-round">Confirmation de présence</a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="card card-stats card-round">
-                                <div class="card-body ">
-                                    <div class="row align-items-center">
-                                        <div class="col-icon">
-                                            <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col col-stats ms-3 ms-sm-0">
-                                            <div class="numbers">
-                                                <p class="card-category">Patients</p>
-                                                <h4 class="card-info"><h4>Nouveau : </h4> 103</h4>
-                                            </div>
-                                        </div>
+
+                        <!-- Liste des cartes -->
+                        <div class="col-md-3">
+                            <div class="card"
+                                 style="border-radius: 12px; background: linear-gradient(135deg, #e0f7fa 0%, #a5d6a7 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                                <div class="card-body curves-shadow text-center p-2">
+                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                                        <i class="fas fa-wheelchair"></i> <!-- Icône pour Patient -->
                                     </div>
+                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">120</h1>
+                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Patients</h5>
+                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">+ 10
+                                        Aujourd'hui</h3>
                                 </div>
                             </div>
                         </div>
-                        {#                        <div class="col-sm-6 col-md-3">#}
-                        {#                            <div class="card card-stats card-round">#}
-                        {#                                <div class="card-body">#}
-                        {#                                    <div class="row align-items-center">#}
-                        {#                                        <div class="col-icon">#}
-                        {#                                            <div class="icon-big text-center icon-info bubble-shadow-small">#}
-                        {#                                                <i class="fas fa-user-check"></i>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                        <div class="col col-stats ms-3 ms-sm-0">#}
-                        {#                                            <div class="numbers">#}
-                        {#                                                <p class="card-category">Subscribers</p>#}
-                        {#                                                <h4 class="card-title">1303</h4>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                        <div class="col-sm-6 col-md-3">#}
-                        {#                            <div class="card card-stats card-round">#}
-                        {#                                <div class="card-body">#}
-                        {#                                    <div class="row align-items-center">#}
-                        {#                                        <div class="col-icon">#}
-                        {#                                            <div class="icon-big text-center icon-success bubble-shadow-small">#}
-                        {#                                                <i class="fas fa-luggage-cart"></i>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                        <div class="col col-stats ms-3 ms-sm-0">#}
-                        {#                                            <div class="numbers">#}
-                        {#                                                <p class="card-category">Sales</p>#}
-                        {#                                                <h4 class="card-title">$ 1,345</h4>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                        <div class="col-sm-6 col-md-3">#}
-                        {#                            <div class="card card-stats card-round">#}
-                        {#                                <div class="card-body">#}
-                        {#                                    <div class="row align-items-center">#}
-                        {#                                        <div class="col-icon">#}
-                        {#                                            <div class="icon-big text-center icon-secondary bubble-shadow-small">#}
-                        {#                                                <i class="far fa-check-circle"></i>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                        <div class="col col-stats ms-3 ms-sm-0">#}
-                        {#                                            <div class="numbers">#}
-                        {#                                                <p class="card-category">Order</p>#}
-                        {#                                                <h4 class="card-title">576</h4>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
+
+                        <div class="col-md-3">
+                            <div class="card"
+                                 style="border-radius: 12px; background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                                <div class="card-body curves-shadow text-center p-2">
+                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">120</h1>
+                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Rendez-vous</h5>
+                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">+ 10
+                                        Aujourd'hui</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card"
+                                 style="border-radius: 12px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                                <div class="card-body curves-shadow text-center p-2">
+                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                                        <i class="fas fa-user-md"></i> <!-- Icône pour Docteur -->
+                                    </div>
+                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">45</h1>
+                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Docteurs</h5>
+                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">Présents : <span
+                                            style="color: #388e3c;">30</span></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card"
+                                 style="border-radius: 12px; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                                <div class="card-body curves-shadow text-center p-2">
+                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                                        <i class="fas fa-female"></i> <!-- Icône pour Infirmière -->
+                                    </div>
+                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">205</h1>
+                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Infirmières</h5>
+                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">Présentes : <span
+                                            style="color: #388e3c;">120</span></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- fin de la liste des cartes -->
+
                     </div>
+                    <!-- end here -->
                 </div>
-                <!-- end here -->
+                {% include 'footer.html' %}
             </div>
-            {% include 'footer.html' %}
-        </div>
         </div>
 
     {% endblock %}
