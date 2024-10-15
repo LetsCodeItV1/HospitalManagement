@@ -76,9 +76,9 @@
                     </div>
                     -->
                     <div class="ms-md-auto py-2 py-md-0">
-                        {#                            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>#}
+                        {#                            <a href="#" class="btn btn-label-info btn-round me-3">Manage</a>#}
                        
-                        <a href="#" class="btn btn-secondary btn-round">Confirmation de présence</a>
+                        <a href="#" class="btn btn-secondary btn-round">Calendrier de présence</a>
                     </div>
                     <div class="row">
 
@@ -182,8 +182,23 @@
                                         <table id="add-row" class="display table table-striped table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Nom</th>
-                                                    <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Poste</th>
+                                                    <th>Nom</th>
+                                                    <th style="position: sticky; top: 0; background-color: #fff; z-index: 10; padding: 10px; text-align: center;">
+                                                        <select id="posteSelect" style="border: none; background-color: transparent; width: 100%; font-size: 16px; text-align: center; color: #000; appearance: none; -moz-appearance: none; -webkit-appearance: none; cursor: pointer;">
+                                                            <option value="Poste" selected>Poste</option> <!-- Ici, le texte "Poste" est la valeur par défaut sélectionnée -->
+                                                            <option value="Médecin">Médecin</option>
+                                                            <option value="Infirmier">Infirmier</option>
+                                                            <option value="Secrétaire">Secrétaire</option>
+                                                            <option value="Technicien de laboratoire">Technicien de laboratoire</option>
+                                                            <option value="Pharmacien">Pharmacien</option>
+                                                            <option value="Administrateur">Administrateur</option>
+                                                        </select>
+                                                    </th>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Adresse</th>
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Téléphone</th>
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Email</th>
@@ -192,15 +207,7 @@
                                                 </tr>
                                             </thead>
                                             <tfoot>
-                                            <tr>
-                                                <th>Nom</th>
-                                                <th>Poste</th>
-                                                <th>Adresse</th>
-                                                <th>Téléphone</th>
-                                                <th>Email</th>
-                                                <th>Statut</th>
-                                                <th>Action</th>
-                                            </tr>
+                                            
                                             </tfoot>
 
                                             <tbody>
