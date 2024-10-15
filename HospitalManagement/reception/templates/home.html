@@ -62,7 +62,7 @@
                             {#                            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>#}
                             <a href="#" class="btn btn-success btn-round">Nouveau patient</a>
                             <a href="#" class="btn btn-primary btn-round">Planifiez rendez-vous</a>
-                            <a href="#" class="btn btn-secondary btn-round">Confirmation de présence</a>
+                            <a href="#" class="btn btn-warning  btn-round">Confirmation de présence</a>
                         </div>
                     </div>
                     <div class="row">
@@ -131,6 +131,248 @@
                         <!-- fin de la liste des cartes -->
 
                     </div>
+                    <!-- Section des rendez-vous du jours et patients à confirmer -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-round">
+                                <div class="card-body">
+                                    <div class="card-head-row card-tools-still-right">
+                                        <div class="card-title">Nouveaux Patients</div>
+                                        <div class="card-tools">
+                                            <div class="dropdown">
+                                                <button class="btn btn-icon btn-clean me-0" type="button"
+                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-h"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-list py-4">
+                                        <div class="item-list">
+                                            <div class="avatar">
+                                                <img src="{% static '/img/jm_denis.jpg' %}" alt="..."
+                                                     class="avatar-img rounded-circle">
+                                            </div>
+                                            <div class="info-user ms-3">
+                                                <div class="username">Jimmy Denis</div>
+                                                <h4 class="status">Régulier | <b class="text-uppercase">Patient Out</b>
+                                                </h4>
+                                            </div>
+                                            <button class="btn btn-icon btn-link op-8 me-1">
+                                                <i class="far fa-sticky-note"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-link btn-success op-8">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="avatar">
+                                                <span class="avatar-title rounded-circle border border-white">CF</span>
+                                            </div>
+                                            <div class="info-user ms-3">
+                                                <div class="username">Chandra Felix</div>
+                                                <h4 class="status">Urgence | <b class="text-uppercase">Chambre 25</b>
+                                                </h4>
+                                            </div>
+                                            <button class="btn btn-icon btn-link op-8 me-1">
+                                                <i class="far fa-sticky-note"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-link btn-success op-8">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="avatar">
+                                                <img src="{% static '/img/arashmil.jpg' %}" alt="..."
+                                                     class="avatar-img rounded-circle">
+                                            </div>
+                                            <div class="info-user ms-3">
+                                                <div class="username">Arashmil</div>
+                                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
+                                                    43</b></h4>
+                                            </div>
+                                            <button class="btn btn-icon btn-link op-8 me-1">
+                                                <i class="far fa-sticky-note"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-link btn-danger op-8">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="avatar">
+                                                <img src="{% static '/img/mlane.jpg' %}" alt="..."
+                                                     class="avatar-img rounded-circle">
+                                            </div>
+                                            <div class="info-user ms-3">
+                                                <div class="username">Michael Lane</div>
+                                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
+                                                    44</b></h4>
+                                            </div>
+                                            <button class="btn btn-icon btn-link op-8 me-1">
+                                                <i class="far fa-sticky-note"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-link btn-danger op-8">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        </div>
+                                        <div class="item-list">
+                                            <div class="avatar">
+                                                <img src="{% static '/img/sauro.jpg' %}" alt="..."
+                                                     class="avatar-img rounded-circle">
+                                            </div>
+                                            <div class="info-user ms-3">
+                                                <div class="username">Sauro Nathan</div>
+                                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
+                                                    45</b></h4>
+                                            </div>
+                                            <button class="btn btn-icon btn-link op-8 me-1">
+                                                <i class="far fa-sticky-note"></i>
+                                            </button>
+                                            <button class="btn btn-icon btn-link btn-danger op-8">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card card-round">
+                                <div class="card-header">
+                                    <div class="card-head-row card-tools-still-right">
+                                        <div class="card-title">Rendez-vous du jour</div>
+                                        <div class="card-tools">
+                                            <div class="dropdown">
+                                                <button class="btn btn-icon btn-clean me-0" type="button"
+                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-h"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                                                     style="">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <!-- Projects table -->
+                                        <table class="table align-items-center mb-0">
+                                            <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Nom et Prenom</th>
+                                                <th scope="col" class="text-end">Heure du rendez-vous</th>
+                                                <th scope="col" class="text-end">Medecin</th>
+                                                <th scope="col" class="text-end">Status</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <button class="btn btn-icon btn-round btn-success btn-sm me-2">
+                                                        <i class="fa fa-check"></i>
+                                                    </button>
+                                                    Claude Michel
+                                                </th>
+                                                <td class="text-end">
+                                                    Aujourd'hui, 2.45pm
+                                                </td>
+                                                <td class="text-end">
+                                                    Dr. Francis D.
+                                                </td>
+                                                <td class="text-end">
+                                                    <span class="badge badge-success">Confirmé</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <button class="btn btn-icon btn-round btn-warning btn-sm me-2">
+                                                        <i class="fa fa-ban"></i>
+                                                    </button>
+                                                    Allia Annah
+                                                </th>
+                                                <td class="text-end">
+                                                    Aujourd'hui, 1.45pm
+                                                </td>
+                                                <td class="text-end">
+                                                    Dr. Int. Alexander Hercule
+                                                </td>
+                                                <td class="text-end">
+                                                    <span class="badge badge-warning">En attente</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <button class="btn btn-icon btn-round btn-warning btn-sm me-2">
+                                                        <i class="fa fa-ban"></i>
+                                                    </button>
+                                                    Stephanie Douyon
+                                                </th>
+                                                <td class="text-end">
+                                                    Aujourd'hui, 10.45am
+                                                </td>
+                                                <td class="text-end">
+                                                    Dr. Int. Alexander Hercule
+                                                </td>
+                                                <td class="text-end">
+                                                    <span class="badge badge-warning">En attente</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <button class="btn btn-icon btn-round btn-danger btn-sm me-2">
+                                                        <i class="fa fa-ban"></i>
+                                                    </button>
+                                                    Rihanna Antoine
+                                                </th>
+                                                <td class="text-end">
+                                                    Aujourd'hui, 3.45pm
+                                                </td>
+                                                <td class="text-end">
+                                                    Dr. Jeanne Dimanche
+                                                </td>
+                                                <td class="text-end">
+                                                    <span class="badge badge-danger">Annulé</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">
+                                                    <button class="btn btn-icon btn-round btn-danger btn-sm me-2">
+                                                        <i class="fa fa-ban"></i>
+                                                    </button>
+                                                    Marcus John
+                                                </th>
+                                                <td class="text-end">
+                                                    Aujourd'hui, 11.45am
+                                                </td>
+                                                <td class="text-end">
+                                                    Dr. Jeanne Dimanche
+                                                </td>
+                                                <td class="text-end">
+                                                    <span class="badge badge-danger">Annulé</span>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin Section des rendez-vous du jours et patients à confirmer -->
                     <!-- end here -->
                 </div>
                 {% include 'footer.html' %}
