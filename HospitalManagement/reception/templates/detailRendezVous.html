@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js"> <![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+</head>
+<body>
+
+<!-- The Modal -->
+<div class="modal fade" id="detailRendezVousModal">
+    <div class="modal-dialog modal-lg modal-sm modal-xl modal-dialog-centered ">
+        <div class="modal-content">
+            <form action="/action_page.php" class="was-validated">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">Rendez-vous</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="card p-3 mb-4"
+                         style="border-radius: 15px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3 class="mb-2" style="font-weight: bold; color: #2c3e50;">John Doe</h3>
+                                <p class="mb-1" style="font-size: 1.1rem;"><i class="fas fa-envelope"></i>
+                                    johndoe@email.com</p>
+                                <p class="mb-1" style="font-size: 1.1rem;"><i class="fas fa-phone"></i> +1234567890</p>
+                                <p class="mb-1" style="font-size: 1.1rem;"><i class="fas fa-calendar"></i> Date et Heure
+                                    : 15 Oct 2024, 10:30 AM</p>
+                                <p class="mb-1" style="font-size: 1.1rem;"><i class="fas fa-map-marker-alt"></i> Adresse
+                                    : 123 Rue de l'Hôpital</p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <span class="badge badge-pill"
+                                      style="background-color: #28a745; font-size: 1rem; padding: 10px; border-radius: 50px;">Présent</span>
+                                <!-- Si absent, remplacez #28a745 par #dc3545 pour un badge rouge -->
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <h5 style="font-weight: bold; color: #2c3e50;">Médecin : Dr. John Smith</h5>
+                            </div>
+                            <div class="col-md-4">
+                                <h5 style="font-weight: bold; color: #2c3e50;">Type : Examen</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" id="confirmezButtonDetailRendezVous" class="btn btn-success">
+                        Confirmer le rendez-vous
+                    </button>
+                    <button type="button" id="annulerButtonDetailRendezVous" class="btn btn-danger"
+                            data-bs-dismiss="modal">
+                        Annuler le rendez-vous
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    // Add an event listener for the "Enregistrer" button
+    document.getElementById("enregistrerButton").addEventListener("click", function () {
+        let nomPatientSelector = document.querySelector('#Name');
+        let nomPatient = nomPatientSelector.value;
+        // Trigger SweetAlert on button click
+        swal("Good job!", "Patient(e) " + (nomPatient.toString()).toUpperCase() + " enregistré(e) avec succès!", {
+            icon: "success",
+            buttons: {
+                confirm: {
+                    className: 'btn btn-success'
+                }
+            },
+        });
+
+    });
+
+
+    // Add an event listener for the "AnnulerButton" button
+    {#document.getElementById("annulerButton").addEventListener("click", function() {#}
+    {#    // Trigger SweetAlert on button click#}
+    {#    swal({#}
+    {#        title: 'Are you sure?',#}
+    {#        text: "You won't be able to revert this!",#}
+    {#        type: 'warning',#}
+    {#        buttons:{#}
+    {#            confirm: {#}
+    {#                text : 'Yes, delete it!',#}
+    {#                className : 'btn btn-success'#}
+    {#            },#}
+    {#            cancel: {#}
+    {#                visible: true,#}
+    {#                className: 'btn btn-danger'#}
+    {#            }#}
+    {#        }#}
+    {#    }).then((Delete) => {#}
+    {#        if (Delete) {#}
+    {#            swal({#}
+    {#                title: 'Deleted!',#}
+    {#                text: 'Your file has been deleted.',#}
+    {#                type: 'success',#}
+    {#                buttons : {#}
+    {#                    confirm: {#}
+    {#                        className : 'btn btn-success'#}
+    {#                    }#}
+    {#                }#}
+    {#            });#}
+    {#        } else {#}
+    {#            swal.close();#}
+    {#        }#}
+    {#    });#}
+
+
+</script>
+
+</body>
+</html>
