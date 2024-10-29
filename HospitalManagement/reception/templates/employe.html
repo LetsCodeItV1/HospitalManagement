@@ -186,7 +186,7 @@
                                                     <th>Nom</th>
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10; padding: 10px; text-align: center;">
                                                         <select id="posteSelect" style="border: none; background-color: transparent; width: 100%; font-size: 16px; text-align: center; color: #000; appearance: none; -moz-appearance: none; -webkit-appearance: none; cursor: pointer;">
-                                                            <option value="Poste" selected>Poste</option> <!-- Ici, le texte "Poste" est la valeur par défaut sélectionnée -->
+                                                            <option value="Poste" selected>Poste</option>
                                                             <option value="Médecin">Médecin</option>
                                                             <option value="Infirmier">Infirmier</option>
                                                             <option value="Secrétaire">Secrétaire</option>
@@ -195,11 +195,6 @@
                                                             <option value="Administrateur">Administrateur</option>
                                                         </select>
                                                     </th>
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Adresse</th>
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Téléphone</th>
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10;">Email</th>
@@ -207,107 +202,70 @@
                                                     <th style="position: sticky; top: 0; background-color: #fff; z-index: 10; width: 10%;">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tfoot>
-                                            
-                                            </tfoot>
-
                                             <tbody>
-                                            <tr>
-                                                <td style="width: 20%;"> <!-- Set a fixed width or use percentages for consistency -->
-                                                    <div style="display: flex; align-items: center;">
-                                                        <img src="{% static '/img/jm_denis.jpg' %}" alt="Jean Olivier's Avatar" class="avatar-img rounded-circle" style="width: 36px; height: 36px; margin-right: 0.5rem;">
-                                                        <a href="profile.php?name=Jean_Olivier" class="name-link" style="text-decoration: none; color: inherit;"> <!-- Add the link here -->
+                                                <tr onclick="showEmployeeCard('Jean Olivier', 'Médecin', '30 Delmas PV Haïti', '509 12343333', 'jeanoliver@gmail.com', 'En service', '/img/jm_denis.jpg')">
+                                                    <td style="width: 20%;">
+                                                        <div style="display: flex; align-items: center;">
+                                                            <img src="{% static '/img/jm_denis.jpg' %}" alt="Jean Olivier's Avatar" class="avatar-img rounded-circle" style="width: 36px; height: 36px; margin-right: 0.5rem;">
                                                             <span>Jean Olivier</span>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td style="width: 15%;">Médecin</td>
-                                                <td style="width: 25%;">30 Delmas PV Haïti</td>
-                                                <td style="width: 15%;">509 12343333</td>
-                                                <td style="width: 25%;">jeanoliver@gmail.com</td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-success">En service</span>
-                                                </td>
-                                                <td>
-                                                    <div class="form-button-action">
-                                                        <button type="button" data-bs-toggle="tooltip" title=""
-                                                                class="btn btn-link btn-primary btn-lg"
-                                                                data-original-title="Edit Task">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" data-bs-toggle="tooltip" title=""
-                                                                class="btn btn-link btn-secondary btn-lg"
-                                                                data-original-title="Calendar">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 20%;">
-                                                    <div style="display: flex; align-items: center;">
-                                                        <img src="{% static '/img/jm_denis.jpg' %}" alt="Marie Duval's Avatar" class="avatar-img rounded-circle" style="width: 36px; height: 36px; margin-right: 0.5rem;">
-                                                        <span>Marie Duval</span>
-                                                    </div>
-                                                </td>
-                                                <td style="width: 15%;">Infirmière</td>
-                                                <td style="width: 25%;">12 Rue Capois, Port-au-Prince, Haïti</td>
-                                                <td style="width: 15%;">509 98765432</td>
-                                                <td style="width: 25%;">marieduval@gmail.com</td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-danger">En Congé</span>
-                                                </td>
-
-                                                <td>
-                                                    <div class="form-button-action">
-                                                        <button type="button" data-bs-toggle="tooltip" title=""
-                                                                class="btn btn-link btn-primary btn-lg"
-                                                                data-original-title="Edit Task">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" data-bs-toggle="tooltip" title=""
-                                                                class="btn btn-link btn-secondary btn-lg"
-                                                                data-original-title="Calendar">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 20%;">
-                                                    <div style="display: flex; align-items: center;">
-                                                        <img src="{% static '/img/jm_denis.jpg' %}" alt="Patrick Jacques's Avatar" class="avatar-img rounded-circle" style="width: 36px; height: 36px; margin-right: 0.5rem;">
-                                                        <span>Patrick Jacques</span>
-                                                    </div>
-                                                </td>
-                                                <td style="width: 15%;">Chirurgien</td>
-                                                <td style="width: 25%;">22 Rue Magloire Ambroise, Jacmel, Haïti</td>
-                                                <td style="width: 15%;">509 23456789</td>
-                                                <td style="width: 25%;">patrickjacques@hotmail.com</td>                <td class="text-end">
-                                                    <span class="badge badge-warning">En pause </span>
-                                                </td>
-                                                <td>
-                                                    <div class="form-button-action">
-                                                        <button type="button" data-bs-toggle="tooltip" title=""
-                                                                class="btn btn-link btn-primary btn-lg"
-                                                                data-original-title="Edit Task">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" data-bs-toggle="tooltip" title=""
-                                                                class="btn btn-link btn-secondary btn-lg"
-                                                                data-original-title="Calendar">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            
-                                            
-                                            
-                                            
-
+                                                        </div>
+                                                    </td>
+                                                    <td style="width: 15%;">Médecin</td>
+                                                    <td style="width: 25%;">30 Delmas PV Haïti</td>
+                                                    <td style="width: 15%;">509 12343333</td>
+                                                    <td style="width: 25%;">jeanoliver@gmail.com</td>
+                                                    <td class="text-end"><span class="badge bg-success">En service</span></td>
+                                                    <td>
+                                                        <div class="form-button-action">
+                                                            <button type="button" data-bs-toggle="tooltip" title="Edit Task" class="btn btn-link btn-primary btn-lg">
+                                                                <i class="fa fa-edit"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="tooltip" title="Calendar" class="btn btn-link btn-secondary btn-lg">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- Répéter les lignes d'employé avec d'autres informations -->
                                             </tbody>
                                         </table>
+
+                                        <div class="modal fade" id="employeeCardModal" tabindex="-1" aria-labelledby="employeeCardModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="employeeCardModalLabel">Détails de l'employé</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-center">
+                                                        <img id="employeePhoto" src="" alt="Photo de profil" class="rounded-circle mb-3" style="width: 80px; height: 80px;">
+                                                        <p><strong>Nom :</strong> <span id="employeeName"></span></p>
+                                                        <p><strong>Poste :</strong> <span id="employeePost"></span></p>
+                                                        <p><strong>Adresse :</strong> <span id="employeeAddress"></span></p>
+                                                        <p><strong>Téléphone :</strong> <span id="employeePhone"></span></p>
+                                                        <p><strong>Email :</strong> <span id="employeeEmail"></span></p>
+                                                        <p><strong>Statut :</strong> <span id="employeeStatus"></span></p>
+                                                    </div>
+                                                </div>
+                                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showEmployeeCard(name, post, address, phone, email, status, photo) {
+        document.getElementById('employeeName').innerText = name;
+        document.getElementById('employeePost').innerText = post;
+        document.getElementById('employeeAddress').innerText = address;
+        document.getElementById('employeePhone').innerText = phone;
+        document.getElementById('employeeEmail').innerText = email;
+        document.getElementById('employeeStatus').innerText = status;
+        document.getElementById('employeePhoto').src = photo;
+
+        // Affiche la modal
+        var employeeCardModal = new bootstrap.Modal(document.getElementById('employeeCardModal'));
+        employeeCardModal.show();
+    }
+</script>
+
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
