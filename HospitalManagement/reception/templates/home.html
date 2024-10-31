@@ -1,482 +1,368 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>
-<html class="no-js">
-<![endif]-->
-<html>
+{% extends 'resources.html' %}
 {% load static %}
-<head>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    {% block title %}<title>Reception App</title> {% endblock %}
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-    <link rel="icon" href="{% static 'img/kaiadmin/favicon.ico' %}" type="image/x-icon"/>
+{% block header %}
 
-    <!-- Fonts and icons -->
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script src="{% static 'js/plugin/webfont/webfont.min.js' %}"></script>
-    <script>
-        WebFont.load({
-            google: {"families": ["Public Sans:300,400,500,600,700"]},
-            custom: {
-                "families": ["Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-                urls: ['{% static "css/fonts.min.css" %}']
-            },
-            active: function () {
-                sessionStorage.fonts = true;
-            }
-        });
-    </script>
+{% endblock %}
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/plugins.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/kaiadmin.min.css' %}">
+{% block afterContainer %}
+    <!-- Your code start here -->
+    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+        <div>
+            <h3 class="fw-bold mb-3">Dashboard</h3>
+            <h6 class="op-7 mb-2">Lets Code it Hospital</h6>
+        </div>
+        <div class="ms-md-auto py-2 py-md-0">
+            {#                            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>#}
+            <a href="#" class="btn btn-success btn-round" data-bs-toggle="modal"
+               data-bs-target="#myModal">Nouveau patient</a>
+            {% include 'patient_form.html' %}
+            <a href="#" class="btn btn-primary btn-round" data-bs-toggle="modal"
+               data-bs-target="#modalAppointement">Planifiez
+                rendez-vous</a>
+            {% include 'appointement_form.html' %}
+            <a href="#" class="btn btn-warning  btn-round" data-bs-toggle="modal"
+               data-bs-target="#presenceModal">Confirmation de
+                présence</a>
+            {% include 'presence_form.html' %}
+        </div>
+    </div>
 
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+    <div class="row">
 
-</head>
-
-
-<body>
-<div class="wrapper">
-    {% block content %}
-        {% include 'navbar_reception.html' %}
-
-        <div class="main-panel">
-            {% include 'header.html' %}
-            <div class="container">
-                <div class="page-inner">
-                    <!-- Your code start here -->
-                    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
-                        <div>
-                            <h3 class="fw-bold mb-3">Dashboard</h3>
-                            <h6 class="op-7 mb-2">Lets Code it Hospital</h6>
-                        </div>
-                        <div class="ms-md-auto py-2 py-md-0">
-                            {#                            <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>#}
-                            <a href="#" class="btn btn-success btn-round" data-bs-toggle="modal"
-                               data-bs-target="#myModal">Nouveau patient</a> {% include 'patient_form.html' %}
-                            <a href="#" class="btn btn-primary btn-round" data-bs-toggle="modal"
-                               data-bs-target="#modalAppointement">Planifiez
-                                rendez-vous</a> {% include 'appointement_form.html' %}
-                            <a href="#" class="btn btn-warning  btn-round" data-bs-toggle="modal"
-                               data-bs-target="#presenceModal">Confirmation de
-                                présence</a> {% include 'presence_form.html' %}
-                        </div>
+        <!-- Liste des cartes -->
+        <div class="col-md-3">
+            <div class="card"
+                 style="border-radius: 12px; background: linear-gradient(135deg, #e0f7fa 0%, #a5d6a7 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                <div class="card-body curves-shadow text-center p-2">
+                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                        <i class="fas fa-wheelchair"></i> <!-- Icône pour Patient -->
                     </div>
-
-                    <div class="row">
-
-                        <!-- Liste des cartes -->
-                        <div class="col-md-3">
-                            <div class="card"
-                                 style="border-radius: 12px; background: linear-gradient(135deg, #e0f7fa 0%, #a5d6a7 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                                <div class="card-body curves-shadow text-center p-2">
-                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
-                                        <i class="fas fa-wheelchair"></i> <!-- Icône pour Patient -->
-                                    </div>
-                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">120</h1>
-                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Patients</h5>
-                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">+ 10
-                                        Aujourd'hui</h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card"
-                                 style="border-radius: 12px; background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                                <div class="card-body curves-shadow text-center p-2">
-                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
-                                        <i class="fas fa-calendar-alt"></i>
-                                    </div>
-                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">120</h1>
-                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Rendez-vous</h5>
-                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">+ 10
-                                        Aujourd'hui</h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card"
-                                 style="border-radius: 12px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                                <div class="card-body curves-shadow text-center p-2">
-                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
-                                        <i class="fas fa-user-md"></i> <!-- Icône pour Docteur -->
-                                    </div>
-                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">45</h1>
-                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Docteurs</h5>
-                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">Présents : <span
-                                            style="color: #388e3c;">30</span></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="card"
-                                 style="border-radius: 12px; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
-                                <div class="card-body curves-shadow text-center p-2">
-                                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
-                                        <i class="fas fa-female"></i> <!-- Icône pour Infirmière -->
-                                    </div>
-                                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">205</h1>
-                                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Infirmières</h5>
-                                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">Présentes : <span
-                                            style="color: #388e3c;">120</span></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- fin de la liste des cartes -->
-
-                    </div>
-                    <!-- Section des rendez-vous du jours et patients à confirmer -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-round">
-                                <div class="card-body">
-                                    <div class="card-head-row card-tools-still-right">
-                                        <div class="card-title">Nouveaux Patients</div>
-                                        <div class="card-tools">
-                                            <div class="dropdown">
-                                                <button class="btn btn-icon btn-clean me-0" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-h"></i>
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-list py-4">
-                                        <div class="item-list">
-                                            <div class="avatar">
-                                                <img src="{% static '/img/jm_denis.jpg' %}" alt="..."
-                                                     class="avatar-img rounded-circle">
-                                            </div>
-                                            <div class="info-user ms-3">
-                                                <div class="username">Jimmy Denis</div>
-                                                <h4 class="status">Régulier | <b class="text-uppercase">Patient Out</b>
-                                                </h4>
-                                            </div>
-                                            <button class="btn btn-icon btn-link op-8 me-1">
-                                                <i class="far fa-sticky-note"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-link btn-success op-8">
-                                                <i class="fas fa-check"></i>
-                                            </button>
-                                        </div>
-                                        <div class="item-list">
-                                            <div class="avatar">
-                                                <span class="avatar-title rounded-circle border border-white">CF</span>
-                                            </div>
-                                            <div class="info-user ms-3">
-                                                <div class="username">Chandra Felix</div>
-                                                <h4 class="status">Urgence | <b class="text-uppercase">Chambre 25</b>
-                                                </h4>
-                                            </div>
-                                            <button class="btn btn-icon btn-link op-8 me-1">
-                                                <i class="far fa-sticky-note"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-link btn-success op-8">
-                                                <i class="fas fa-check"></i>
-                                            </button>
-                                        </div>
-                                        <div class="item-list">
-                                            <div class="avatar">
-                                                <img src="{% static '/img/arashmil.jpg' %}" alt="..."
-                                                     class="avatar-img rounded-circle">
-                                            </div>
-                                            <div class="info-user ms-3">
-                                                <div class="username">Arashmil</div>
-                                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
-                                                    43</b></h4>
-                                            </div>
-                                            <button class="btn btn-icon btn-link op-8 me-1">
-                                                <i class="far fa-sticky-note"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-link btn-danger op-8">
-                                                <i class="fas fa-ban"></i>
-                                            </button>
-                                        </div>
-                                        <div class="item-list">
-                                            <div class="avatar">
-                                                <img src="{% static '/img/mlane.jpg' %}" alt="..."
-                                                     class="avatar-img rounded-circle">
-                                            </div>
-                                            <div class="info-user ms-3">
-                                                <div class="username">Michael Lane</div>
-                                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
-                                                    44</b></h4>
-                                            </div>
-                                            <button class="btn btn-icon btn-link op-8 me-1">
-                                                <i class="far fa-sticky-note"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-link btn-danger op-8">
-                                                <i class="fas fa-ban"></i>
-                                            </button>
-                                        </div>
-                                        <div class="item-list">
-                                            <div class="avatar">
-                                                <img src="{% static '/img/sauro.jpg' %}" alt="..."
-                                                     class="avatar-img rounded-circle">
-                                            </div>
-                                            <div class="info-user ms-3">
-                                                <div class="username">Sauro Nathan</div>
-                                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
-                                                    45</b></h4>
-                                            </div>
-                                            <button class="btn btn-icon btn-link op-8 me-1">
-                                                <i class="far fa-sticky-note"></i>
-                                            </button>
-                                            <button class="btn btn-icon btn-link btn-danger op-8">
-                                                <i class="fas fa-ban"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        {% include 'detailRendezVous.html' %}
-                        <div class="col-md-8">
-                            <div class="card card-round">
-                                <div class="card-header">
-                                    <div class="card-head-row card-tools-still-right">
-                                        <div class="card-title">Rendez-vous du jour</div>
-                                        <div class="card-tools">
-                                            <div class="dropdown">
-                                                <button class="btn btn-icon btn-clean me-0" type="button"
-                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-h"></i>
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                                                     style="">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body p-0">
-                                    <div class="table-responsive">
-                                        <!-- Projects table -->
-                                        <table class="table align-items-center mb-0 hover table-light table-hover">
-                                            <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">Actions</th>
-                                                <th scope="col">Nom et Prenom</th>
-                                                <th scope="col" class="text-end">Heure du rendez-vous</th>
-                                                <th scope="col" class="text-end">Medecin</th>
-                                                <th scope="col" class="text-end">Status</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">
-                                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#detailRendezVousModal">
-                                                        <i class="fa fa-info"></i>
-                                                    </button>
-                                                </th>
-                                                <th scope="row">
-                                                    Claude Michel
-                                                </th>
-                                                <td class="text-end">
-                                                    Aujourd'hui, 2.45pm
-                                                </td>
-                                                <td class="text-end">
-                                                    Dr. Francis D.
-                                                </td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-success">Confirmé</span>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#detailRendezVousModal">
-                                                        <i class="fa fa-info"></i>
-                                                    </button>
-                                                </th>
-                                                <th scope="row">
-                                                    Allia Annah
-                                                </th>
-                                                <td class="text-end">
-                                                    Aujourd'hui, 1.45pm
-                                                </td>
-                                                <td class="text-end">
-                                                    Dr. Int. Alexander Hercule
-                                                </td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-warning">En attente</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#detailRendezVousModal">
-                                                        <i class="fa fa-info"></i>
-                                                    </button>
-                                                </th>
-                                                <th scope="row">
-
-                                                    Stephanie Douyon
-                                                </th>
-                                                <td class="text-end">
-                                                    Aujourd'hui, 10.45am
-                                                </td>
-                                                <td class="text-end">
-                                                    Dr. Int. Alexander Hercule
-                                                </td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-warning">En attente</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#detailRendezVousModal">
-                                                        <i class="fa fa-info"></i>
-                                                    </button>
-                                                </th>
-                                                <th scope="row">
-                                                    Rihanna Antoine
-                                                </th>
-                                                <td class="text-end">
-                                                    Aujourd'hui, 3.45pm
-                                                </td>
-                                                <td class="text-end">
-                                                    Dr. Jeanne Dimanche
-                                                </td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-danger">Annulé</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#detailRendezVousModal">
-                                                        <i class="fa fa-info"></i>
-                                                    </button>
-                                                </th>
-                                                <th scope="row">
-                                                    Marcus John
-                                                </th>
-                                                <td class="text-end">
-                                                    Aujourd'hui, 11.45am
-                                                </td>
-                                                <td class="text-end">
-                                                    Dr. Jeanne Dimanche
-                                                </td>
-                                                <td class="text-end">
-                                                    <span class="badge badge-danger">Annulé</span>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fin Section des rendez-vous du jours et patients à confirmer -->
-                    <!-- end here -->
+                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">120</h1>
+                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Patients</h5>
+                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">+ 10
+                        Aujourd'hui</h3>
                 </div>
-                {% include 'footer.html' %}
             </div>
         </div>
 
-    {% endblock %}
-</div>
-</body>
+        <div class="col-md-3">
+            <div class="card"
+                 style="border-radius: 12px; background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                <div class="card-body curves-shadow text-center p-2">
+                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">120</h1>
+                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Rendez-vous</h5>
+                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">+ 10
+                        Aujourd'hui</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card"
+                 style="border-radius: 12px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                <div class="card-body curves-shadow text-center p-2">
+                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                        <i class="fas fa-user-md"></i> <!-- Icône pour Docteur -->
+                    </div>
+                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">45</h1>
+                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Docteurs</h5>
+                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">Présents : <span
+                            style="color: #388e3c;">30</span></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card"
+                 style="border-radius: 12px; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                <div class="card-body curves-shadow text-center p-2">
+                    <div class="icon-big text-center mb-1" style="color: #00796b; font-size: 1.5rem;">
+                        <i class="fas fa-female"></i> <!-- Icône pour Infirmière -->
+                    </div>
+                    <h1 style="color: #388e3c; font-size: 1.5rem; font-weight: bold;">205</h1>
+                    <h5 class="op-8" style="color: #2c3e50; font-size: 0.9rem;">Total Infirmières</h5>
+                    <h3 class="fw-bold op-8" style="color: #00796b; font-size: 1rem;">Présentes : <span
+                            style="color: #388e3c;">120</span></h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- fin de la liste des cartes -->
+
+    </div>
+    <!-- Section des rendez-vous du jours et patients à confirmer -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-round">
+                <div class="card-body">
+                    <div class="card-head-row card-tools-still-right">
+                        <div class="card-title">Nouveaux Patients</div>
+                        <div class="card-tools">
+                            <div class="dropdown">
+                                <button class="btn btn-icon btn-clean me-0" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-list py-4">
+                        <div class="item-list">
+                            <div class="avatar">
+                                <img src="{% static '/img/jm_denis.jpg' %}" alt="..."
+                                     class="avatar-img rounded-circle">
+                            </div>
+                            <div class="info-user ms-3">
+                                <div class="username">Jimmy Denis</div>
+                                <h4 class="status">Régulier | <b class="text-uppercase">Patient Out</b>
+                                </h4>
+                            </div>
+                            <button class="btn btn-icon btn-link op-8 me-1">
+                                <i class="far fa-sticky-note"></i>
+                            </button>
+                            <button class="btn btn-icon btn-link btn-success op-8">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                        <div class="item-list">
+                            <div class="avatar">
+                                <span class="avatar-title rounded-circle border border-white">CF</span>
+                            </div>
+                            <div class="info-user ms-3">
+                                <div class="username">Chandra Felix</div>
+                                <h4 class="status">Urgence | <b class="text-uppercase">Chambre 25</b>
+                                </h4>
+                            </div>
+                            <button class="btn btn-icon btn-link op-8 me-1">
+                                <i class="far fa-sticky-note"></i>
+                            </button>
+                            <button class="btn btn-icon btn-link btn-success op-8">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                        <div class="item-list">
+                            <div class="avatar">
+                                <img src="{% static '/img/arashmil.jpg' %}" alt="..."
+                                     class="avatar-img rounded-circle">
+                            </div>
+                            <div class="info-user ms-3">
+                                <div class="username">Arashmil</div>
+                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
+                                    43</b></h4>
+                            </div>
+                            <button class="btn btn-icon btn-link op-8 me-1">
+                                <i class="far fa-sticky-note"></i>
+                            </button>
+                            <button class="btn btn-icon btn-link btn-danger op-8">
+                                <i class="fas fa-ban"></i>
+                            </button>
+                        </div>
+                        <div class="item-list">
+                            <div class="avatar">
+                                <img src="{% static '/img/mlane.jpg' %}" alt="..."
+                                     class="avatar-img rounded-circle">
+                            </div>
+                            <div class="info-user ms-3">
+                                <div class="username">Michael Lane</div>
+                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
+                                    44</b></h4>
+                            </div>
+                            <button class="btn btn-icon btn-link op-8 me-1">
+                                <i class="far fa-sticky-note"></i>
+                            </button>
+                            <button class="btn btn-icon btn-link btn-danger op-8">
+                                <i class="fas fa-ban"></i>
+                            </button>
+                        </div>
+                        <div class="item-list">
+                            <div class="avatar">
+                                <img src="{% static '/img/sauro.jpg' %}" alt="..."
+                                     class="avatar-img rounded-circle">
+                            </div>
+                            <div class="info-user ms-3">
+                                <div class="username">Sauro Nathan</div>
+                                <h4 class="status">Régulier | <b class="text-uppercase">En attente |
+                                    45</b></h4>
+                            </div>
+                            <button class="btn btn-icon btn-link op-8 me-1">
+                                <i class="far fa-sticky-note"></i>
+                            </button>
+                            <button class="btn btn-icon btn-link btn-danger op-8">
+                                <i class="fas fa-ban"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% include 'detailRendezVous.html' %}
+        <div class="col-md-8">
+            <div class="card card-round">
+                <div class="card-header">
+                    <div class="card-head-row card-tools-still-right">
+                        <div class="card-title">Rendez-vous du jour</div>
+                        <div class="card-tools">
+                            <div class="dropdown">
+                                <button class="btn btn-icon btn-clean me-0" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                                     style="">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center mb-0 hover table-light table-hover">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Actions</th>
+                                <th scope="col">Nom et Prenom</th>
+                                <th scope="col" class="text-end">Heure du rendez-vous</th>
+                                <th scope="col" class="text-end">Medecin</th>
+                                <th scope="col" class="text-end">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#detailRendezVousModal">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </th>
+                                <th scope="row">
+                                    Claude Michel
+                                </th>
+                                <td class="text-end">
+                                    Aujourd'hui, 2.45pm
+                                </td>
+                                <td class="text-end">
+                                    Dr. Francis D.
+                                </td>
+                                <td class="text-end">
+                                    <span class="badge badge-success">Confirmé</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#detailRendezVousModal">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </th>
+                                <th scope="row">
+                                    Allia Annah
+                                </th>
+                                <td class="text-end">
+                                    Aujourd'hui, 1.45pm
+                                </td>
+                                <td class="text-end">
+                                    Dr. Int. Alexander Hercule
+                                </td>
+                                <td class="text-end">
+                                    <span class="badge badge-warning">En attente</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#detailRendezVousModal">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </th>
+                                <th scope="row">
+
+                                    Stephanie Douyon
+                                </th>
+                                <td class="text-end">
+                                    Aujourd'hui, 10.45am
+                                </td>
+                                <td class="text-end">
+                                    Dr. Int. Alexander Hercule
+                                </td>
+                                <td class="text-end">
+                                    <span class="badge badge-warning">En attente</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#detailRendezVousModal">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </th>
+                                <th scope="row">
+                                    Rihanna Antoine
+                                </th>
+                                <td class="text-end">
+                                    Aujourd'hui, 3.45pm
+                                </td>
+                                <td class="text-end">
+                                    Dr. Jeanne Dimanche
+                                </td>
+                                <td class="text-end">
+                                    <span class="badge badge-danger">Annulé</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <button class="btn btn-icon btn-round btn-info btn-sm me-2"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#detailRendezVousModal">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </th>
+                                <th scope="row">
+                                    Marcus John
+                                </th>
+                                <td class="text-end">
+                                    Aujourd'hui, 11.45am
+                                </td>
+                                <td class="text-end">
+                                    Dr. Jeanne Dimanche
+                                </td>
+                                <td class="text-end">
+                                    <span class="badge badge-danger">Annulé</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Section des rendez-vous du jours et patients à confirmer -->
+    <!-- end here -->
+{% endblock %}
+
+{% block footer %}
 
 
-<!-- Core JS Files -->
-<script src="{% static 'js/core/jquery-3.7.1.min.js' %}"></script>
-<script src="{% static 'js/core/popper.min.js' %}"></script>
-<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+{% endblock %}
 
-<!-- jQuery Scrollbar -->
-<script src="{% static 'js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
-
-<!-- Chart JS -->
-<script src="{% static 'js/plugin/chart.js/chart.min.js' %}"></script>
-
-<!-- jQuery Sparkline -->
-<script src="{% static 'js/plugin/jquery.sparkline/jquery.sparkline.min.js' %}"></script>
-
-<!-- Chart Circle -->
-<script src="{% static 'js/plugin/chart-circle/circles.min.js' %}"></script>
-
-<!-- Datatables -->
-<script src="{% static 'js/plugin/datatables/datatables.min.js' %}"></script>
-
-<!-- Bootstrap Notify -->
-<script src="{% static 'js/plugin/bootstrap-notify/bootstrap-notify.min.js' %}"></script>
-
-<!-- jQuery Vector Maps -->
-<script src="{% static 'js/plugin/jsvectormap/jsvectormap.min.js' %}"></script>
-<script src="{% static 'js/plugin/jsvectormap/world.js' %}"></script>
-
-<!-- Sweet Alert -->
-<script src="{% static 'js/plugin/sweetalert/sweetalert.min.js' %}"></script>
-
-<!-- Kaiadmin JS -->
-<script src="{% static 'js/kaiadmin.min.js' %}"></script>
-
-<!-- Kaiadmin DEMO methods, don't include it in your project! -->
-<script src="{% static 'js/setting-demo.js' %}"></script>
-<script src="{% static 'js/demo.js' %}"></script>
-
-<script>
-    $('#lineChart').sparkline([102, 109, 120, 99, 110, 105, 115], {
-        type: 'line',
-        height: '70',
-        width: '100%',
-        lineWidth: '2',
-        lineColor: '#177dff',
-        fillColor: 'rgba(23, 125, 255, 0.14)'
-    });
-
-    $('#lineChart2').sparkline([99, 125, 122, 105, 110, 124, 115], {
-        type: 'line',
-        height: '70',
-        width: '100%',
-        lineWidth: '2',
-        lineColor: '#f3545d',
-        fillColor: 'rgba(243, 84, 93, .14)'
-    });
-
-    $('#lineChart3').sparkline([105, 103, 123, 100, 95, 105, 115], {
-        type: 'line',
-        height: '70',
-        width: '100%',
-        lineWidth: '2',
-        lineColor: '#ffa534',
-        fillColor: 'rgba(255, 165, 52, .14)'
-    });
-</script>
-
-</html>
