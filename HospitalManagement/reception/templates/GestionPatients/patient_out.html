@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js">
+<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<div id="container-patient-out" class="patient-item patient-out" data-aos="fade-down">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Patient OUT</h4>
+                    <button id="btn-actualiser-out"
+                            class="btn btn-dark btn-round ms-auto"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRowModal"
+                    >
+                        <i class="fa fa-refresh"></i>
+                        Actualiser
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Nom complet</th>
+                            {#                            <th>Numéro d'identification unique</th>#}
+                            {#                            <th>Date de naissance</th>#}
+                            <th>Date et heure du dernier rendez-vous</th>
+                            <th>Médecin</th>
+                            <th>Statut rendez-vous</th>
+                            <th>Assurance (statut et validité)</th>
+                            <th style="width: 10%">Action</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>Date et heure du dernier rendez-vous</th>
+                            <th>Médecin</th>
+                            <th>Statut rendez-vous</th>
+                            <th>Assurance (statut et validité)</th>
+                            <th style="width: 10%">Action</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                            <td>Peter John</td>
+                            <td>2024-10-02 10:30 AM</td>
+                            <td>Dr. Phenelon Pierre</td>
+                            <td>Confirmé</td>
+                            <td>Valid (Expires 2025-06-30)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                            title="Afficher les détails" class="btn btn-link btn-primary btn-lg">
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier" class="btn btn-link btn-danger">
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+
+                            <td>2024-09-02 11:30 AM</td>
+                            <td>Dr. Phenelon Pierre</td>
+                            <td>Confirmé</td>
+                            <td>Valid (Expires 2025-06-30)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                            title="Afficher les détails" class="btn btn-link btn-primary btn-lg">
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier" class="btn btn-link btn-danger">
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>John DOE</td>
+
+                            <td>2024-11-12 10:30 AM</td>
+                            <td>Dr. Ania J.</td>
+                            <td>En attente</td>
+                            <td>Expired (Expired 2023-11-01)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                            title="Afficher les détails" class="btn btn-link btn-primary btn-lg">
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier" class="btn btn-link btn-danger">
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

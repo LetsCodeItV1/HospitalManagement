@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js">
+<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<div id="container-patient-in" class="patient-item patient-in" style="display: none;" data-aos="fade-left">
+
+    <div class="col-md-12">
+        <div class="card " style="background-color: #9eeaf9">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Patient IN</h4>
+                    <button class="btn btn-white btn-round ms-auto"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRowModal"
+                    >
+                        <i class="fa fa-refresh"></i>
+                        Actualiser
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table
+                            id="add-row"
+                            class="display table table-striped table-hover"
+                    >
+                        <thead>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>Numéro de chambre et lit</th>
+                            <th>Médecin en charge</th>
+                            <th>Date d'admission</th>
+                            <th>Statut actuel</th>
+                            <th>Assurance (statut et validité)</th>
+                            <th style="width: 10%">Action</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Nom complet</th>
+                            <th>Numéro de chambre et lit</th>
+                            <th>Médecin en charge</th>
+                            <th>Date d'admission</th>
+                            <th>Statut actuel</th>
+                            <th>Assurance (statut et validité)</th>
+                            <th>Action</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr>
+                            <td>Jean Dupont</td>
+                            <td>Chambre 101, Lit A</td>
+                            <td>Dr. Martin</td>
+                            <td>01/11/2024</td>
+                            <td>Sous traitement</td>
+                            <td>Validé (Expire le 01/11/2025)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button
+                                            style="font-size: 25px"
+                                            type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Afficher le patient"
+                                            class="btn btn-link btn-primary btn-lg"
+                                            data-original-title="Afficher le patient"
+                                    >
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button
+                                            style="font-size: 25px"
+                                            type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier"
+                                            class="btn btn-link btn-danger"
+                                            data-original-title="Télécharger le dossier"
+                                    >
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Marc Daniel</td>
+                            <td>Chambre 101, Lit A</td>
+                            <td>Dr. Martin</td>
+                            <td>10/08/2024</td>
+                            <td>Sous traitement</td>
+                            <td>Validé (Expire le 05/09/2026)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button style="font-size: 25px" type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Afficher le patient"
+                                            class="btn btn-link btn-primary btn-lg"
+                                            data-original-title="Afficher le patient le patient"
+                                    >
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button style="font-size: 25px" type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier"
+                                            class="btn btn-link btn-danger"
+                                            data-original-title="Télécharger le dossier">
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mario André</td>
+                            <td>Chambre 101, Lit C</td>
+                            <td>Dr. Martin</td>
+                            <td>03/06/2024</td>
+                            <td>Sous traitement</td>
+                            <td>Validé (Expire le 11/02/2025)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button style="font-size: 25px" type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Afficher le patient"
+                                            class="btn btn-link btn-primary btn-lg"
+                                            data-original-title="Afficher le patient">
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button style="font-size: 25px" type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier"
+                                            class="btn btn-link btn-danger"
+                                            data-original-title="Télécharger le dossier"
+                                    >
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jean Dupont</td>
+                            <td>Chambre 104, Lit A</td>
+                            <td>Dr. Sanjuan</td>
+                            <td>01/11/2024</td>
+                            <td>Sous traitement</td>
+                            <td>Validé (Expire le 01/11/2025)</td>
+                            <td>
+                                <div class="form-button-action">
+                                    <button style="font-size: 25px" type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Afficher le patient"
+                                            class="btn btn-link btn-primary btn-lg"
+                                            data-original-title="Afficher le patient"
+                                    >
+                                        <i class="fa fa-external-link"></i>
+                                    </button>
+                                    <button style="font-size: 25px" type="button"
+                                            data-bs-toggle="tooltip"
+                                            title="Télécharger le dossier"
+                                            class="btn btn-link btn-danger"
+                                            data-original-title="Télécharger le dossier"
+                                    >
+                                        <i class="fa fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Add more rows here with similar structure for each patient -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
