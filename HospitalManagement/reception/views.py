@@ -8,7 +8,7 @@ def home(request):
 
 
 def patient(request):
-    return render(request, 'patient.html')
+    return render(request, 'GestionPatients/patient.html')
 
 
 def employe(request):

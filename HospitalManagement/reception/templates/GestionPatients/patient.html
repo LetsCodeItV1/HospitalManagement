@@ -1,0 +1,56 @@
+{% extends 'resources.html' %}
+{% load static %}
+
+{% block header %}
+
+    {% block title %}<title>Gestion des Patients - Reception</title> {% endblock %}
+    <!-- Importez vos fichiers scripts/cdn/CSS à l'interieur de ce block!!! -->
+    <link rel="stylesheet" href="{% static 'css/patient_style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js">
+
+    </script>
+
+{% endblock %}
+
+{% block afterContainer %}
+    <!-- Your main code start here , after the <div class="page-inner"> <<resources.html>> -->
+    <section id="patient" class="patient section-bg">
+
+        <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="patient-flters">
+                    <li data-filter=".patient-out" class="filter-active">Patient Out</li>
+                    |
+                    <li data-filter=".patient-in" class="">Patient In</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row patient-container justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            {% include 'GestionPatients/patient_out.html' %}
+            {% include 'GestionPatients/patient_in.html' %}
+        </div>
+
+
+    </section><!-- End patient Section -->
+    {#    {% include 'GestionPatients/patient_in.html' %}#}
+    <!-- end here -->
+{% endblock %}
+
+{% block footerScript %}
+    <!-- Importez vos fichiers scripts/cdn qui doivent être executer après le chargement de la page à l'interieur de ce block!!! -->
+    <script>
+        AOS.init();
+
+    </script>
+
+    <script src="{% static 'js/patient_script.js' %}"></script>
+
+
+{% endblock %}
+
