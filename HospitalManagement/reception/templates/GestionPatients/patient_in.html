@@ -73,16 +73,18 @@
                             <td>Validé (Expire le 01/11/2025)</td>
                             <td>
                                 <div class="form-button-action">
-                                    <button
-                                            style="font-size: 25px"
-                                            type="button"
-                                            data-bs-toggle="tooltip"
-                                            title="Afficher le patient"
-                                            class="btn btn-link btn-primary btn-lg"
-                                            data-original-title="Afficher le patient"
-                                    >
-                                        <i class="fa fa-external-link"></i>
-                                    </button>
+                                    <a href="{% url 'detail_patient' %}">
+                                        <button
+                                                style="font-size: 25px"
+                                                type="button"
+                                                data-bs-toggle="tooltip"
+                                                title="Afficher le patient"
+                                                class="btn btn-link btn-primary btn-lg"
+                                                data-original-title="Afficher le patient"
+                                        >
+                                            <i class="fa fa-external-link"></i>
+                                        </button>
+                                    </a>
                                     <button
                                             style="font-size: 25px"
                                             type="button"

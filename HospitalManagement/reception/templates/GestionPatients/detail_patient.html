@@ -1,0 +1,79 @@
+{% extends 'resources.html' %}
+{% load static %}
+
+{% block header %}
+    {% block title %}<title>Détails du Patient - Reception App</title>{% endblock %}
+    <!-- Importez vos fichiers CSS ou liens externes ici -->
+    {#    <link rel="stylesheet" href="{% static 'path/to/your/custom.css' %}">#}
+{% endblock %}
+
+{% block afterContainer %}
+    <div class="page-inner py-4">
+        <!-- Section Informations Personnelles -->
+        <div class="card mb-4" style="border-radius: 10px;">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Informations Personnelles (Patient Out)</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Nom Complet :</strong> John Doe</p>
+                        <p><strong>Email :</strong> johndoe@email.com</p>
+                        <p><strong>Téléphone :</strong> +1234567890</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>NIF/PIN: </strong> 0000000000</p>
+                        <p><strong>Date de Naissance :</strong> 01 Janvier 1980</p>
+                        <p><strong>Adresse :</strong> 123 Rue de l'Hôpital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Historique des Consultations -->
+        <div class="card" style="border-radius: 10px;">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Historique des Consultations</h4>
+            </div>
+            <div class="card-body">
+                <!-- Liste des consultations avec Bootstrap table -->
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type de Consultation</th>
+                        <th>Médecin</th>
+                        <th>Observations</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>15 Oct 2024</td>
+                        <td>Examen</td>
+                        <td>Dr. John Smith</td>
+                        <td>Examen général, suivi recommandé.</td>
+                        <td><a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal"
+                               data-bs-target="#detailConsultationModal">Voir Détails</a></td>
+                    </tr>
+                    <tr>
+                        <td>12 Sep 2024</td>
+                        <td>Suivi</td>
+                        <td>Dre. Jane Doe</td>
+                        <td>Suivi post-opératoire, état stable.</td>
+                        <td><a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal"
+                               data-bs-target="#detailConsultationModal">Voir Détails</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% include 'GestionPatients/detail_consultation.html' %}
+
+{% endblock %}
+
+{% block footerScript %}
+    <!-- Scripts spécifiques à cette page -->
+{% endblock %}

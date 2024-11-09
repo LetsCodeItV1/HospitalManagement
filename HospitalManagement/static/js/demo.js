@@ -194,8 +194,8 @@ Circles.create({
 //Notify
 $.notify({
     icon: 'icon-bell',
-    title: 'Kaiadmin',
-    message: 'Premium Bootstrap 5 Admin Dashboard',
+    title: 'Lets Code It',
+    message: 'Don\'t forget that you\'re working in one the best hospital',
 }, {
     type: 'secondary',
     placement: {

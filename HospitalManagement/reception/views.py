@@ -14,3 +14,5 @@ def patient(request):
 def employe(request):
     return render(request, 'employe.html')
 
+def detailPatient(request):
+    return render(request, 'GestionPatients/detail_patient.html')

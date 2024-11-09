@@ -71,10 +71,12 @@
                             <td>Valid (Expires 2025-06-30)</td>
                             <td>
                                 <div class="form-button-action">
-                                    <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
-                                            title="Afficher les détails" class="btn btn-link btn-primary btn-lg">
-                                        <i class="fa fa-external-link"></i>
-                                    </button>
+                                    <a href="{% url 'detail_patient' %}">
+                                        <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
+                                                title="Afficher les détails" class="btn btn-link btn-primary btn-lg">
+                                            <i class="fa fa-external-link"></i>
+                                        </button>
+                                    </a>
                                     <button style="font-size: 25px" type="button" data-bs-toggle="tooltip"
                                             title="Télécharger le dossier" class="btn btn-link btn-danger">
                                         <i class="fa fa-file-pdf"></i>
